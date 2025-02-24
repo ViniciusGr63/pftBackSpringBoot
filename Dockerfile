@@ -10,7 +10,7 @@
 # CMD ["java", "-jar", "ptfBackEnd.jar"]
 
 # Etapa 1: Construção do JAR
-FROM maven:3.8.6-openjdk-17 AS builder
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
 WORKDIR /app
 
 # Copia os arquivos do projeto
@@ -20,7 +20,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Etapa 2: Construção da imagem final
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-slim
 WORKDIR /app
 
 # Copia o JAR gerado na etapa anterior
