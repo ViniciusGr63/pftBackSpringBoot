@@ -10,4 +10,8 @@ public class WebController {
     public String mostrarPagina() {
         return "Pagina";  // Nome do arquivo HTML sem a extensão ".html"
     }
+    @GetMapping("/pag")
+    public String mostrarPaginaApi() {
+        return "Api";
+    }
 }

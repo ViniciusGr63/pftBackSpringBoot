@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<h1>Kanye West Api</h1> <br>
+
+<p>Tudo mundo sabe que o rapper Kanye West é o maior filósofo contemporâneo <BR> do século XXII (um século a mais pois eles está a frente do tempo).</p>
+<P>Esta API REST (https://api.kanye.rest) é um api gratuita para citações aleatórias de Kanye West.</P>
+  
+ <img th:src="@{/img/imgggg.jpg}" alt="Imagem personalizada" width="400" >
+
+
+   <button id="load-info">Carregar Frase</button>
+   <br>
+   <div id="info">
+     
+   </div>
+
+   <script>
+       document.getElementById("load-info").addEventListener("click", function() {
+           fetch("https://miniature-xylophone-xj556v94449fv9g7-8080.app.github.dev/info") 
+               .then(response => response.json()) 
+               .then(data => {
+                  
+                   document.getElementById("info").innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+               })
+               .catch(error => {
+                   console.error("Erro ao buscar as informações:", error);
+                   document.getElementById("info").innerHTML = "<p>Erro ao carregar as informações.</p>";
+               });
+       });
+   </script>
+</html>
