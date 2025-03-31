@@ -14,4 +14,8 @@ public class WebController {
     public String mostrarPaginaApi() {
         return "Api";
     }
+    @GetMapping("/pag")
+    public String mostrarPaginasmp() {
+        return "smp";
+    }
 }
