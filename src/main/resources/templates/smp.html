@@ -36,6 +36,12 @@
             background-color: #4CAF50;
             color: white;
         }
+        .mensagem {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: green;
+        }
     </style>
 </head>
 <body>
@@ -45,10 +51,15 @@
         <img th:src="@{/img/cattt.webp}" alt="Imagem personalizada" width="200" >
         <button id="btnSim" onclick="trocarResposta('sim')">Sim</button>
         <button id="btnNao" onclick="trocarResposta('nao')">Não</button>
+        <!-- Mensagem será inserida aqui -->
+        <div id="mensagem" class="mensagem"></div>
     </div>
 
     <script>
         function trocarResposta(resposta) {
+            // Exibe a mensagem "Que bom" ao clicar em qualquer botão
+            document.getElementById('mensagem').textContent = "Que bom que voce marcou sim :D";
+
             if (resposta === 'nao') {
                 // Troca os textos para que sempre "Sim" seja a resposta escolhida
                 document.getElementById('btnSim').textContent = 'Sim';
